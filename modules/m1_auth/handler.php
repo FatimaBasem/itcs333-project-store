@@ -13,7 +13,7 @@ switch (true) {
         $password = (string) ($input['password'] ?? '');
         $is_admin = empty($input['is_admin']) ? 0 : 1;
 
-        // validation
+        
         $fields = [];
         if (empty($username)) { $fields['username'] = 'required'; }
         if (empty($password)) { $fields['password'] = 'required'; }
@@ -21,14 +21,14 @@ switch (true) {
             send_error(422, 'VALIDATION', ['fields' => $fields]);
         }
 
-        // check duplicate
+        
         $stmt = $pdo->prepare("SELECT id FROM users WHERE username = ?");
         $stmt->execute([$username]);
         if ($stmt->fetch(PDO::FETCH_ASSOC)) {
             send_error(409, 'USERNAME_TAKEN');
         }
 
-        // insert
+        
         $id = db_insert_and_get_id($pdo, 'users', [
             'username'      => $username,
             'password_hash' => password_hash($password, PASSWORD_DEFAULT),
