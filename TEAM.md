@@ -6,7 +6,7 @@
 | 202409371| Fatima Basem | m1_auth |
 | 20XXXXXX |  | m2_catalog |
 | 20XXXXXX |  | m3_cart |
-| 20XXXXXX |  | m4_orders |
+| 202404449 |Eman Khalil | m4_orders |
 | 20XXXXXX |  | m5_admin |
 
 ## Weekly contribution log (optional)
@@ -14,6 +14,6 @@
 |---|---|---|
 | 4 | Fatima Basem | m1_auth: modules/m1_auth/handler.php (register, login, logout, me); contract tests pass |
 | 6 |  |  |
-| 10 |  |  |
+| 10 | Eman Khalil | m4_orders: modules/m4_orders/handler.php (checkout, order history, order detail); contract tests pass |
 | 13 |  |  |
 
